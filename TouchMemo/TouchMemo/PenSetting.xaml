@@ -1,0 +1,60 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TouchMemo.PenSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot は、すべてのページ コンテンツが配置されるルート グリッドです-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel は、アプリケーション名とページ タイトルを格納します-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="タッチメモ" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="72" Text="ペンの設定"/>
+        </StackPanel>
+
+        <!--ContentPanel - 追加コンテンツをここに入力します-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="Red" Width="120" Height="120" Margin="16" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="Orange" Width="120" Height="120" Margin="16" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="Yellow" Width="120" Height="120" Margin="16" Tap="Rectangle_Tap"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="Green" Height="120" Width="120" Margin="16" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="Blue" Height="120" Width="120" Margin="16" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="Magenta" Height="120" Width="120" Margin="16" Tap="Rectangle_Tap"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Fill="Cyan" Height="120" Width="120" Margin="16" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="Black" Height="120" Width="120" Margin="16" Stroke="Gray" Tap="Rectangle_Tap"/>
+                <Rectangle Fill="White" Height="120" Width="120" Margin="16" Tap="Rectangle_Tap"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Width="152" Height="152" Click="btn_Click">
+                    <Ellipse x:Name="small" Fill="White" Height="10" Width="10" Stroke="Gray"/>
+                </Button>
+                <Button Height="152" Width="152" Click="btn_Click">
+                    <Ellipse x:Name="medium" Fill="White" Height="30" Width="30" Stroke="Gray"/>
+                </Button>
+                <Button Width="152" Height="152" Click="btn_Click">
+                    <Ellipse x:Name="large" Fill="White" Height="60" Width="60" Stroke="Gray"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>
